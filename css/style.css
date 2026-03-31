@@ -540,6 +540,9 @@ section[data-page].active { display: block; }
 /* ─────────────────────────────────────────────────────────────
    9. ABOUT — Services Grid
 ───────────────────────────────────────────────────────────────*/
+.sub-section-title span {
+  color: var(--clr-accent);
+}
 
 .services-section-header {
   margin-bottom: 24px;
