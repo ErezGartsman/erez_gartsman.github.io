@@ -175,11 +175,13 @@ function copyEmailToClipboard() {
       trigger.style.pointerEvents = "auto";
     }, 2500);
   }).catch(function () {
+    trigger.style.pointerEvents = 'none';
     textSpan.style.color = 'var(--clr-accent)';
     textSpan.innerText = 'Press Ctrl+C';
     setTimeout(() => {
       textSpan.innerText = originalText;
       textSpan.style.color = '';
+      trigger.style.pointerEvents = 'auto';
     }, 2500);
   });
 }
@@ -214,11 +216,13 @@ function copyAboutEmailToClipboard() {
       trigger.style.pointerEvents = "auto";
     }, 2500);
   }).catch(function () {
+    trigger.style.pointerEvents = 'none';
     textSpan.style.color = 'var(--clr-accent)';
     textSpan.innerText = 'Press Ctrl+C';
     setTimeout(() => {
       textSpan.innerText = originalText;
       textSpan.style.color = '';
+      trigger.style.pointerEvents = 'auto';
     }, 2500);
   });
 }
