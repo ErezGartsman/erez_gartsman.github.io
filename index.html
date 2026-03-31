@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erez Gartsman – Product &amp; Data Management Portfolio</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Erez Gartsman – Product & Data Management Portfolio. Bar-Ilan University. Data analytics, product strategy, and digital content." />
+  <meta name="keywords"    content="Erez Gartsman, Product Management, Data Analytics, Power BI, Python, SQL, UX Research, Portfolio" />
+  <meta name="author"      content="Erez Gartsman" />
+  <meta property="og:title"       content="Erez Gartsman – Product & Data Management Portfolio" />
+  <meta property="og:description" content="Data-driven product thinker. Bridging R&D logic with user engagement." />
+  <meta property="og:type"        content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet (same folder) -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════
+       MOBILE TOP BAR
+  ══════════════════════════════════ -->
+  <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <span class="mobile-logo" aria-hidden="true">EG.</span>
+    <button
+      id="hamburger"
+      class="hamburger"
+      aria-controls="sidebar"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Sidebar backdrop -->
+  <div id="sidebarOverlay" class="sidebar-overlay" role="presentation"></div>
+
+
+  <!-- ══════════════════════════════════
+       LAYOUT SHELL
+  ══════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ────────────────────────────────
+         SIDEBAR
+    ──────────────────────────────────── -->
+    <aside id="sidebar" class="sidebar" aria-label="Profile and navigation">
+
+      <img src="assets/img/my-avatar.png" alt="Erez Gartsman" class="profile-avatar">
+
+      <p class="sidebar-name">Erez Gartsman</p>
+      <span class="sidebar-role">Product &amp; Data Management</span>
+
+      <div class="sidebar-divider"></div>
+
+      <ul class="contact-list" aria-label="Contact information">
+
+        <li>
+          <a href="tel:+972546150955" class="contact-item" title="Call me">
+            <span class="icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </span>
+            <span>+972-546150955</span>
+          </a>
+        </li>
+      
+        <li class="contact-item" id="copy-email-trigger" onclick="copyEmailToClipboard()" style="cursor: pointer;" title="Click to copy email">
+          <span class="icon" aria-hidden="true" id="sb-email-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </span>
+          <span id="sb-email-text" style="transition: color 0.2s;">erezkim1234@gmail.com</span>
+        </li>
+      
+        <li>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hadera,Israel" target="_blank" rel="noopener noreferrer" class="contact-item" title="View on Google Maps">
+            <span class="icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span>Hadera, Israel</span>
+          </a>
+        </li>
+      
+      </ul>
+
+      <div class="social-row" aria-label="Social profiles">
+
+        <a href="https://www.linkedin.com/in/erezgartsman/" target="_blank" rel="noopener noreferrer"
+           class="social-btn" aria-label="LinkedIn profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+
+        <a href="https://github.com/ErezGartsman" target="_blank" rel="noopener noreferrer"
+           class="social-btn" aria-label="GitHub profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+          </svg>
+        </a>
+
+        <a href="mailto:erezkim1234@gmail.com?subject=Reaching out from your portfolio" class="social-btn" aria-label="Send email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+
+        <a href="#about"     class="nav-link active" data-nav-link="about"     aria-current="page">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20v-1a8 8 0 0116 0v1"/></svg>
+          About
+        </a>
+
+        <a href="#resume"    class="nav-link"         data-nav-link="resume">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+          Resume
+        </a>
+
+        <a href="#portfolio" class="nav-link"         data-nav-link="portfolio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Portfolio
+        </a>
+
+        <a href="#contact"   class="nav-link"         data-nav-link="contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Contact
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ────────────────────────────────
+         MAIN CONTENT
+    ──────────────────────────────────── -->
+    <main class="main" id="mainContent">
+
+
+      <!-- ══ ABOUT ══════════════════════════════════ -->
+      <section data-page="about" class="active" aria-label="About me">
+
+        <div class="section-header">
+          <span class="section-label">Introduction</span>
+          <h1 class="section-title">About <span>Me</span></h1>
+        </div>
+
+        <p class="about-summary">
+          Final-year Data &amp; Product Management student at Bar-Ilan University (Dual-Degree in
+          Information Science &amp; Communication). Proven track record of merging data-driven insights
+          with creative storytelling, leveraging 4+ years of community building and content strategy.
+          Experienced in executing end-to-end data projects, defining product requirements (PRDs), and
+          translating user research into technical solutions. Passionate about bridging the gap between
+          R&amp;D logic and user engagement to deliver measurable impact.
+        </p>
+
+        <div class="services-section-header">
+          <span class="section-label">What I Do</span>
+          <h2 class="sub-section-title">Core <span style="color:var(--clr-accent)">Capabilities</span></h2>
+        </div>
+
+        <div class="services-grid stagger">
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="service-title">Data Analytics</h3>
+            <p class="service-desc">End-to-end data pipelines, ETL automation, and interactive Power BI dashboards. Python, SQL, and AI-assisted analytics that turn engagement logs into actionable KPIs.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="service-title">Product Strategy</h3>
+            <p class="service-desc">PRD writing, user research (thematic analysis), UX/UI principles, and Agile methodologies. Translating user pain points into clear, testable product requirements.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="service-title">Content &amp; Community</h3>
+            <p class="service-desc">Scaled a digital community to 75,000+ engaged followers. A/B tested content formats and executed cross-platform creative strategy from concept to delivery.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="service-title">Market Research</h3>
+            <p class="service-desc">Comprehensive competitor benchmarking, SWOT analysis, and AI-integrated qualitative research. Delivering strategic insights with data-driven feature prioritisation.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ══ RESUME ══════════════════════════════════ -->
+      <section data-page="resume" aria-label="Resume and experience">
+
+        <div class="section-header">
+          <span class="section-label">My Journey</span>
+          <h1 class="section-title">Resume &amp; <span>Experience</span></h1>
+        </div>
+
+        <div class="resume-cols">
+
+          <!-- LEFT col -->
+          <div>
+
+            <h2 class="resume-col-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Education
+            </h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="tl-date">Oct 2023 – Jul 2026</p>
+                <p class="tl-org">Bar-Ilan University</p>
+                <p class="tl-role">B.A. Dual-Degree — Information Science &amp; Communication</p>
+                <span class="tl-badge">GPA: 97.05</span>
+                <p class="tl-desc">Relevant coursework: Product Management, Data Analysis, HCI, UX Research, Information Retrieval, Digital Strategy, Consumer Behavior, Database Management.</p>
+              </div>
+              <div class="timeline-item">
+                <p class="tl-date">Oct 2025 – Sep 2026</p>
+                <p class="tl-org">Bar-Ilan University — PM Fellowship</p>
+                <p class="tl-role">Fellow: Product Management Program</p>
+                <span class="tl-badge">GPA: 98</span>
+                <p class="tl-desc">Intensive fellowship in Product Management — strategy, PRD writing, stakeholder alignment, and go-to-market execution.</p>
+              </div>
+            </div>
+
+            <h2 class="resume-col-title timeline-spacer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Military Service
+            </h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="tl-date">Mar 2018 – Nov 2020 &nbsp;·&nbsp; Reserve: 2023–2024</p>
+                <p class="tl-org">IDF — 188th Armored Brigade</p>
+                <p class="tl-role">Tank Commander &amp; Operations Sergeant (Rasp)</p>
+                <span class="tl-badge">Iron Swords — Tzav 8</span>
+                <p class="tl-desc">Commanded tank crews and combat personnel, overseeing operational readiness and personnel management. Directed company-level logistics and complex field deployments. Mobilised for active reserve duty (Tzav 8) during Operation Iron Swords (2023–2024).</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT col -->
+          <div>
+
+            <h2 class="resume-col-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              Experience
+            </h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <p class="tl-date">Aug 2021 – Present</p>
+                <p class="tl-org">Self-Employed</p>
+                <p class="tl-role">Digital Content Creator &amp; Community Manager</p>
+                <p class="tl-desc">Scaled a digital community to 75,000+ highly engaged followers across multiple platforms. Conducted A/B testing on content formats, analysing engagement metrics to optimise reach and retention. Facilitated 1-on-1 user interviews and coaching sessions to extract qualitative insights.</p>
+              </div>
+              <div class="timeline-item">
+                <p class="tl-date">Nov 2024 – Mar 2026</p>
+                <p class="tl-org">Maya Karvat Communications &amp; Content</p>
+                <p class="tl-role">PR Specialist &amp; Researcher</p>
+                <p class="tl-desc">Conducted in-depth qualitative research and client interviews to define brand messaging for leading culinary brands (Taizu, "a" restaurants). Orchestrated cross-functional media operations and stakeholder alignments ensuring seamless PR plan execution.</p>
+              </div>
+              <div class="timeline-item">
+                <p class="tl-date">May 2023 – May 2024</p>
+                <p class="tl-org">Alfi Productions</p>
+                <p class="tl-role">Creative Lead &amp; Content Strategist</p>
+                <p class="tl-desc">Directed cross-platform creative strategies, translating client requirements into engaging visual narratives. Collaborated with cross-functional teams to align content with strategic business goals, ensuring high user engagement and brand consistency.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- /resume-cols -->
+
+        <!-- Skills -->
+          <!-- Skills -->
+
+        <div class="skills-section">
+
+
+
+          <h2 class="resume-col-title">
+
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+
+            Technical Skills
+
+          </h2>
+
+          <div class="skills-grid">
+
+            <div class="skill-item">
+              <div class="skill-header"><span class="skill-name">Data Analytics</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Data Analytics 100%">
+                <div class="skill-fill" data-width="95"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header"><span class="skill-name">Product Management</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Product Management 100%">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header"><span class="skill-name">Creative Strategy</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Creative Strategy 100%">
+                <div class="skill-fill" data-width="100"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-header"><span class="skill-name">Development (C#, Python, JS)</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Development 100%">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="resume-col-title" style="margin-top:36px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+            Tools &amp; Technologies
+          </h2>
+
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">DAX</span>
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">C# / .NET</span>
+            <span class="tech-tag">HTML / CSS</span>
+            <span class="tech-tag">Jira</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">MCP</span>
+            <span class="tech-tag">Base44</span>
+            <span class="tech-tag">AI / LLMs</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ══ PORTFOLIO ══════════════════════════════════ -->
+      <section data-page="portfolio" aria-label="Portfolio projects">
+
+        <div class="section-header">
+          <span class="section-label">Selected Work</span>
+          <h1 class="section-title">My <span>Projects</span></h1>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/project1.png" alt="Instagram Analytics Pipeline" class="project-img">
+              <span class="project-number">PROJECT 01</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span class="project-tag">Data</span><span class="project-tag">Python</span><span class="project-tag">Power BI</span></div>
+              <h2 class="project-title">End-to-End Instagram Analytics Pipeline</h2>
+              <p class="project-desc">Engineered Python/Selenium web-scraping scripts to extract raw engagement logs, establishing an AI-assisted ETL pipeline. Designed a Star Schema data model with complex DAX measures in Power BI and deployed interactive dashboards to production. Leveraged MCP to connect AI tools with local environments and implemented Webhook automations between Jira and Slack.</p>
+              <div class="project-footer">
+                <span class="project-period">Jul – Dec 2025</span>
+                <a href="https://app.powerbi.com/links/WOkHksHpp9?ctid=90c49fc4-c9e6-4529-a15a-033c041d510a&pbi_source=linkShare" target="_blank" rel="noopener noreferrer" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/project2.png" alt="Smartrip Application" class="project-img">
+              <span class="project-number">PROJECT 02</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span class="project-tag">Product</span><span class="project-tag">UX/UI</span><span class="project-tag">Prototype</span></div>
+              <h2 class="project-title">Smartrip — Travel Planning Application</h2>
+              <p class="project-desc">Led product definition and development of a functional prototype for a smart travel planning application in Base44. Conducted in-depth user research to identify friction points in multi-participant trip planning, and designed a goal-oriented UX with zero-friction onboarding.</p>
+              <div class="project-footer">
+                <span class="project-period">Dec 2025</span>
+                <a href="https://smart-travel-1ee45729.base44.app" target="_blank" rel="noopener noreferrer" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/project3.png" alt="Market Research & AI Analysis" class="project-img">
+              <span class="project-number">PROJECT 03</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags"><span class="project-tag">AI</span><span class="project-tag">Strategy</span><span class="project-tag">Research</span></div>
+              <h2 class="project-title">Market Research &amp; Competitor Analysis</h2>
+              <p class="project-desc">Spearheaded comprehensive competitor research — comparative benchmarking, UX/UI mapping, and value proposition analysis. Integrated AI to automate qualitative and quantitative research. Delivered a strategic insights report with a full competitor matrix, SWOT analysis, and feature prioritisation recommendations.</p>
+              <div class="project-footer">
+                <span class="project-period">Jan 2026 · Freelance</span>
+                <a href="https://erezgartsman.github.io/market-research-elad.pdf" target="_blank" rel="noopener noreferrer" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ══ CONTACT ══════════════════════════════════ -->
+      <section data-page="contact" aria-label="Contact information">
+
+        <div class="section-header">
+          <span class="section-label">Get In Touch</span>
+          <h1 class="section-title">Contact <span>Me</span></h1>
+        </div>
+
+        <div class="contact-grid">
+              <address style="font-style:normal;">
+              
+              <a href="tel:+972546150955" class="contact-info-item" title="Call me">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                  <p class="contact-info-title">Phone</p>
+                  <p class="contact-info-value">+972-546150955</p>
+                </div>
+              </a>
+            
+              <div class="contact-info-item" id="about-copy-email-trigger" onclick="copyAboutEmailToClipboard()" style="cursor: pointer;" title="Click to copy email">
+                <div class="contact-icon-box" id="about-email-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <p class="contact-info-title">Email</p>
+                  <p class="contact-info-value" id="about-email-text" style="transition: color 0.2s;">erezkim1234@gmail.com</p>
+                </div>
+              </div>
+            
+              <a href="https://maps.google.com/?q=Hadera,Israel" target="_blank" rel="noopener noreferrer" class="contact-info-item" title="Open Map to Hadera">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p class="contact-info-title">Location</p>
+                  <p class="contact-info-value">Hadera, Israel</p>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/erezgartsman/" target="_blank" rel="noopener noreferrer" class="contact-info-item" title="Visit my LinkedIn">
+                <div class="contact-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div>
+                  <p class="contact-info-title">LinkedIn</p>
+                  <p class="contact-info-value">linkedin.com/in/erezgartsman</p>
+                </div>
+              </a>
+
+            </address>
+
+           <div class="contact-form-note">
+            <h2 class="form-note-title">Let's work together.</h2>
+            <p class="form-note-text">
+              I'm open to full-time opportunities in Product Management and Data Analytics,
+              as well as freelance and consulting engagements. Drop me a message and
+              I'll get back to you as soon as possible.
+            </p>
+ 
+            <!-- Contact form -->
+            <form id="contactForm" class="contact-form">
+ 
+              <!-- Name -->
+              <div class="cf-field">
+                <label class="cf-label" for="cf-name">Full Name</label>
+                <input
+                  id="cf-name"
+                  name="from_name"
+                  type="text"
+                  class="cf-input"
+                  placeholder="Your name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+ 
+              <!-- Email -->
+              <div class="cf-field">
+                <label class="cf-label" for="cf-email">Email Address</label>
+                <input
+                  id="cf-email"
+                  name="reply_to"
+                  type="email"
+                  class="cf-input"
+                  placeholder="you@example.com"
+                  required
+                  pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                  title="Please enter a valid email address (e.g., name@example.com)"
+                  autocomplete="email"
+                />
+              </div>
+ 
+              <!-- Message -->
+              <div class="cf-field">
+                <label class="cf-label" for="cf-message">Message</label>
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  class="cf-input cf-textarea"
+                  placeholder="Tell me about your project or opportunity…"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+ 
+              <!-- Submit -->
+              <button type="submit" class="cta-btn cf-submit" id="cfSubmitBtn">
+                <span class="cf-btn-text">Send Message</span>
+                <svg class="cf-spinner" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2.5"
+                     aria-hidden="true">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83
+                           M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </button>
+ 
+              <div id="cfFeedback" class="cf-feedback" role="alert" aria-live="polite"></div>
+ 
+            </form>
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </main>
+  </div><!-- /layout -->
+
+  <script src="js/script.js"></script>
+
+  <script>
+  (function () {
+    'use strict';
+ 
+    emailjs.init('0YG_nqZ_YUekuLqKE');
+ 
+    var form      = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('cfSubmitBtn');
+    var btnText   = submitBtn.querySelector('.cf-btn-text');
+    var spinner   = submitBtn.querySelector('.cf-spinner');
+    var feedback  = document.getElementById('cfFeedback');
+ 
+    function setLoading(on) {
+      submitBtn.disabled = on;
+      btnText.textContent = on ? 'Sending…' : 'Send Message';
+      spinner.style.display = on ? 'block' : 'none';
+      submitBtn.classList.toggle('cf-loading', on);
+    }
+ 
+    function showFeedback(type, msg) {
+      feedback.textContent = msg;
+      feedback.className = 'cf-feedback cf-feedback--' + type + ' cf-feedback--visible';
+    }
+ 
+    function hideFeedback() {
+      feedback.className = 'cf-feedback';
+      feedback.textContent = '';
+    }
+ 
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      hideFeedback();
+ 
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+ 
+      setLoading(true);
+ 
+      emailjs
+        .sendForm(
+          'service_glpxgnt',
+          'template_ctif7kr',
+          form
+        )
+        .then(function () {
+          setLoading(false);
+          showFeedback(
+            'success',
+            "✓  Message sent! I'll get back to you as soon as possible."
+          );
+          form.reset();
+          setTimeout(hideFeedback, 8000);
+        })
+        .catch(function (err) {
+          setLoading(false);
+          showFeedback(
+            'error',
+            '✕  Something went wrong (' + (err.text || 'unknown error') + '). Please try again or email me directly.'
+          );
+          console.error('EmailJS error:', err);
+        });
+    });
+ 
+    form.addEventListener('input', function () {
+      if (feedback.classList.contains('cf-feedback--visible')) {
+        hideFeedback();
+      }
+    });
+ 
+  }());
+  </script>
+
+</body>
+</html>
