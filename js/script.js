@@ -148,81 +148,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function copyEmailToClipboard() {
-  const email = "erezkim1234@gmail.com";
-  const iconSpan = document.getElementById("sb-email-icon");
-  const textSpan = document.getElementById("sb-email-text");
-  const trigger = document.getElementById("copy-email-trigger");
+function copyEmail(opts) {
+  var email       = 'erezkim1234@gmail.com';
+  var iconEl      = document.getElementById(opts.iconId);
+  var textEl      = document.getElementById(opts.textId);
+  var triggerEl   = document.getElementById(opts.triggerId);
+  var checkSize   = opts.checkSize || 14;
 
-  const originalIcon = iconSpan.innerHTML;
-  const originalText = textSpan.innerText;
+  if (!iconEl || !textEl || !triggerEl) return;
 
-  navigator.clipboard.writeText(email).then(() => {
-    iconSpan.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd9a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-    iconSpan.style.borderColor = "#7dd9a8";
-    textSpan.innerText = "Copied!";
-    textSpan.style.color = "#7dd9a8";
-    textSpan.style.fontWeight = "700";
+  var originalIcon = iconEl.innerHTML;
+  var originalText = textEl.innerText;
 
-    trigger.style.pointerEvents = "none";
+  navigator.clipboard.writeText(email)
+    .then(function () {
+      iconEl.innerHTML = '<svg width="' + checkSize + '" height="' + checkSize + '" viewBox="0 0 24 24" fill="none" stroke="#7dd9a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      iconEl.style.borderColor = '#7dd9a8';
+      if (opts.colorIcon) iconEl.style.color = '#7dd9a8';
+      textEl.innerText       = 'Copied!';
+      textEl.style.color     = '#7dd9a8';
+      textEl.style.fontWeight= '700';
+      triggerEl.style.pointerEvents = 'none';
 
-    setTimeout(() => {
-      iconSpan.innerHTML = originalIcon;
-      iconSpan.style.borderColor = "";
-      textSpan.innerText = originalText;
-      textSpan.style.color = "";
-      textSpan.style.fontWeight = "";
-      trigger.style.pointerEvents = "auto";
-    }, 2500);
-  }).catch(function () {
-    trigger.style.pointerEvents = 'none';
-    textSpan.style.color = 'var(--clr-accent)';
-    textSpan.innerText = 'Press Ctrl+C';
-    setTimeout(() => {
-      textSpan.innerText = originalText;
-      textSpan.style.color = '';
-      trigger.style.pointerEvents = 'auto';
-    }, 2500);
-  });
-}
-
-function copyAboutEmailToClipboard() {
-  const email = "erezkim1234@gmail.com";
-  const iconBox = document.getElementById("about-email-icon");
-  const textSpan = document.getElementById("about-email-text");
-  const trigger = document.getElementById("about-copy-email-trigger");
-
-  const originalIcon = iconBox.innerHTML;
-  const originalText = textSpan.innerText;
-
-  navigator.clipboard.writeText(email).then(() => {
-    iconBox.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7dd9a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-    iconBox.style.borderColor = "#7dd9a8";
-    iconBox.style.color = "#7dd9a8";
-    
-    textSpan.innerText = "Copied!";
-    textSpan.style.color = "#7dd9a8";
-    textSpan.style.fontWeight = "700";
-
-    trigger.style.pointerEvents = "none";
-
-    setTimeout(() => {
-      iconBox.innerHTML = originalIcon;
-      iconBox.style.borderColor = "";
-      iconBox.style.color = "";
-      textSpan.innerText = originalText;
-      textSpan.style.color = "";
-      textSpan.style.fontWeight = "";
-      trigger.style.pointerEvents = "auto";
-    }, 2500);
-  }).catch(function () {
-    trigger.style.pointerEvents = 'none';
-    textSpan.style.color = 'var(--clr-accent)';
-    textSpan.innerText = 'Press Ctrl+C';
-    setTimeout(() => {
-      textSpan.innerText = originalText;
-      textSpan.style.color = '';
-      trigger.style.pointerEvents = 'auto';
-    }, 2500);
-  });
+      setTimeout(function () {
+        iconEl.innerHTML  = originalIcon;
+        iconEl.style.borderColor  = '';
+        if (opts.colorIcon) iconEl.style.color = '';
+        textEl.innerText        = originalText;
+        textEl.style.color      = '';
+        textEl.style.fontWeight = '';
+        triggerEl.style.pointerEvents = 'auto';
+      }, 2500);
+    })
+    .catch(function () {
+      triggerEl.style.pointerEvents = 'none';
+      textEl.style.color = 'var(--clr-accent)';
+      textEl.innerText = 'Press Ctrl+C';
+      setTimeout(function () {
+        textEl.innerText = originalText;
+        textEl.style.color = '';
+        triggerEl.style.pointerEvents = 'auto';
+      }, 2500);
+    });
 }
