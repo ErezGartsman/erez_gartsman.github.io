@@ -20,10 +20,11 @@
 
   <!-- Stylesheet (same folder) -->
   <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 </head>
 
 <body>
+  <h1 class="sr-only">Erez Gartsman — Product &amp; Data Management Portfolio</h1>
 
   <!-- ══════════════════════════════════
        MOBILE TOP BAR
@@ -166,7 +167,7 @@
 
         <div class="section-header">
           <span class="section-label">Introduction</span>
-          <h1 class="section-title">About <span>Me</span></h1>
+          <h2 class="section-title">About <span>Me</span></h2>
         </div>
 
         <p class="about-summary">
@@ -227,7 +228,7 @@
 
         <div class="section-header">
           <span class="section-label">My Journey</span>
-          <h1 class="section-title">Resume &amp; <span>Experience</span></h1>
+          <h2 class="section-title">Resume &amp; <span>Experience</span></h2>
         </div>
 
         <div class="resume-cols">
@@ -385,7 +386,7 @@
 
         <div class="section-header">
           <span class="section-label">Selected Work</span>
-          <h1 class="section-title">My <span>Projects</span></h1>
+          <h2 class="section-title">My <span>Projects</span></h2>
         </div>
 
         <div class="projects-grid">
@@ -448,7 +449,7 @@
 
         <div class="section-header">
           <span class="section-label">Get In Touch</span>
-          <h1 class="section-title">Contact <span>Me</span></h1>
+          <h2 class="section-title">Contact <span>Me</span></h2>
         </div>
 
         <div class="contact-grid">
@@ -577,24 +578,31 @@
   <script src="js/script.js"></script>
 
   <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     'use strict';
- 
-    emailjs.init('0YG_nqZ_YUekuLqKE');
- 
+
+    // בודק שהספרייה נטענה לפני שמפעיל אותה
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init('0YG_nqZ_YUekuLqKE');
+    }
+
     var form      = document.getElementById('contactForm');
     var submitBtn = document.getElementById('cfSubmitBtn');
+    
+    // בדיקת הגנה למקרה שהאלמנטים לא קיימים בדף מסוים
+    if (!submitBtn) return; 
+
     var btnText   = submitBtn.querySelector('.cf-btn-text');
     var spinner   = submitBtn.querySelector('.cf-spinner');
     var feedback  = document.getElementById('cfFeedback');
- 
+
     function setLoading(on) {
       submitBtn.disabled = on;
-      btnText.textContent = on ? 'Sending…' : 'Send Message';
-      spinner.style.display = on ? 'block' : 'none';
+      if (btnText) btnText.textContent = on ? 'Sending…' : 'Send Message';
+      if (spinner) spinner.style.display = on ? 'block' : 'none';
       submitBtn.classList.toggle('cf-loading', on);
     }
- 
+     
     function showFeedback(type, msg) {
       feedback.textContent = msg;
       feedback.className = 'cf-feedback cf-feedback--' + type + ' cf-feedback--visible';
