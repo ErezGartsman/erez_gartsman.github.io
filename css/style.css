@@ -1098,6 +1098,8 @@ a.contact-info-item:hover .contact-info-value,
 
 .cta-btn:active { transform: translateY(0); }
 
+.copy-trigger { cursor: pointer; }
+
 
 /* ─────────────────────────────────────────────────────────────
    15. UTILITIES
