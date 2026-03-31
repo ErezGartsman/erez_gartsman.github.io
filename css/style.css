@@ -165,22 +165,19 @@ body::after {
 
 .sidebar {
   width: var(--sidebar-width);
-  min-height: 100vh;
   background: var(--clr-surface);
-  border-right: 1px solid var(--clr-border);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding: 40px 22px 32px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  /* הסרנו מפה position, height, top, ו-border-right כי הם משתנים בין מובייל לדסקטופ */
   overflow-y: auto;
   flex-shrink: 0;
   z-index: 100;
   transition: right var(--duration-base) var(--ease-out),
-            left  var(--duration-base) var(--ease-out);}
+              left  var(--duration-base) var(--ease-out);
+}
 
 /* ── Avatar ── */
 .avatar-fallback,
@@ -1227,6 +1224,17 @@ a.contact-info-item:hover .contact-info-value,
   .services-grid      { grid-template-columns: 1fr; }
   .projects-grid      { grid-template-columns: 1fr; }
 
+}
+
+/* ── Desktop Sidebar specific (Claude Fix: ISSUE 4) ── */
+@media (min-width: 769px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+    border-right: 1px solid var(--clr-border);
+  }
 }
 
 /* ── ≥ 768px – 1024px ── */
