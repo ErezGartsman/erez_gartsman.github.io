@@ -174,6 +174,13 @@ function copyEmailToClipboard() {
       textSpan.style.fontWeight = "";
       trigger.style.pointerEvents = "auto";
     }, 2500);
+  }).catch(function () {
+    textSpan.style.color = 'var(--clr-accent)';
+    textSpan.innerText = 'Press Ctrl+C';
+    setTimeout(() => {
+      textSpan.innerText = originalText;
+      textSpan.style.color = '';
+    }, 2500);
   });
 }
 
@@ -205,6 +212,13 @@ function copyAboutEmailToClipboard() {
       textSpan.style.color = "";
       textSpan.style.fontWeight = "";
       trigger.style.pointerEvents = "auto";
+    }, 2500);
+  }).catch(function () {
+    textSpan.style.color = 'var(--clr-accent)';
+    textSpan.innerText = 'Press Ctrl+C';
+    setTimeout(() => {
+      textSpan.innerText = originalText;
+      textSpan.style.color = '';
     }, 2500);
   });
 }
