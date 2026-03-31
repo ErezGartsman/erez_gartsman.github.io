@@ -145,7 +145,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+  var sbTrigger = document.getElementById('copy-email-trigger');
+  if (sbTrigger) {
+    sbTrigger.addEventListener('click', function () {
+      copyEmail({ iconId: 'sb-email-icon', textId: 'sb-email-text', triggerId: 'copy-email-trigger', checkSize: 14 });
+    });
+  }
 
+  var aboutTrigger = document.getElementById('about-copy-email-trigger');
+  if (aboutTrigger) {
+    aboutTrigger.addEventListener('click', function () {
+      copyEmail({ iconId: 'about-email-icon', textId: 'about-email-text', triggerId: 'about-copy-email-trigger', checkSize: 20, colorIcon: true });
+    });
+  }
 });
 
 function copyEmail(opts) {
